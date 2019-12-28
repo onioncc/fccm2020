@@ -1,0 +1,31 @@
+** Image Data **
+
+- Each image is stored as a 32*32 bin file with only one channel (grayscale images)
+- The pixels are stored row by row
+- Bin files for images are stored under '/home/cong/Code/fccm2020/LeNet-5/data/testSet/testSet/image_bins'
+
+** Weight Data **
+
+-- The weights are flattened into a one-dimensional bin file
+-- Flattening order is : kernel * kernel * input_channel * output_channel
+
+out_channel_1:
+[[k*k] (input_channel_1)
+[k*k] (input_channel_2)
+...
+[k*k]] (input_channel_6)
+
+out_challen_2:
+[[k*k]
+[k*k]
+...
+[k*k]]
+
+out_channel_3:
+[[k*k]
+[k*k]
+...
+[k*k]]
+
+...
+

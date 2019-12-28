@@ -115,6 +115,7 @@ test()
 
 for k, v in net.state_dict().items():
 	print(k)
+	print(v)
 	flat_weight = v.contiguous().view(v.numel())
 	param_list = []
 	param_list.extend(flat_weight.tolist())
@@ -122,16 +123,16 @@ for k, v in net.state_dict().items():
 		i = float(i)
 	print(len(param_list))
 
-
 	fp = open('./' + k + '.bin', 'wb')
 	s = struct.pack('f'*len(param_list), *param_list)
 	fp.write(s)
 
 
-path = '/home/cong/Code/FCCM2020/LeNet-5/data/testSet/testSet/'
+path = '/home/cong/Code/fccm2020/LeNet-5/data/testSet/testSet/'
 from PIL import Image
 
 for idx in range(1, 10001):
+#for idx in range(10, 11):
 	f = path + 'img_' + str(idx) + '.jpg'
 	print(f)
 	image = Image.open(f).convert('L')
